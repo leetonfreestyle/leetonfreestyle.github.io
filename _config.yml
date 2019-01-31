@@ -1,0 +1,8 @@
+title: Leetonfreestyle - GitHub.io
+description: leetonfreestyle的技术博客
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions
