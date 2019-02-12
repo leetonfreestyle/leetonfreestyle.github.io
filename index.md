@@ -20,9 +20,15 @@
 
 [《Isola P, Zhu J Y, Zhou T, et al. Image-to-image translation with conditional adversarial networks[J]. arXiv preprint, 2017.》](https://arxiv.org/pdf/1611.07004)
 
+[《Zhu J Y, Park T, Isola P, et al. Unpaired image-to-image translation using cycle-consistent adversarial networks[J]. arXiv preprint, 2017.》](http://openaccess.thecvf.com/content_ICCV_2017/papers/Zhu_Unpaired_Image-To-Image_Translation_ICCV_2017_paper.pdf)
+
+[《Chen Q, Koltun V. Photographic image synthesis with cascaded refinement networks[C]//IEEE International Conference on Computer Vision (ICCV). 2017, 1(2): 3.》](http://openaccess.thecvf.com/content_ICCV_2017/papers/Chen_Photographic_Image_Synthesis_ICCV_2017_paper.pdf)
+
 > 图像超分辨率(image super resolution)
 
 [《Dong C, Loy C C, He K, et al. Image super-resolution using deep convolutional networks[J]. IEEE transactions on pattern analysis and machine intelligence, 2016, 38(2): 295-307.》](https://arxiv.org/pdf/1501.00092)
+
+[《Ledig C, Theis L, Huszár F, et al. Photo-realistic single image super-resolution using a generative adversarial network[J]. arXiv preprint, 2017.》](http://openaccess.thecvf.com/content_cvpr_2017/papers/Ledig_Photo-Realistic_Single_Image_CVPR_2017_paper.pdf)
 
 ### image + mask -> image
 
@@ -30,11 +36,15 @@
 
 [《Pathak D, Krahenbuhl P, Donahue J, et al. Context encoders: Feature learning by inpainting[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 2536-2544.》](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Pathak_Context_Encoders_Feature_CVPR_2016_paper.pdf)
 
+[《Nazeri K, Ng E, Joseph T, et al. EdgeConnect: Generative Image Inpainting with Adversarial Edge Learning[J]. arXiv preprint arXiv:1901.00212, 2019.》](https://arxiv.org/pdf/1901.00212)
+
 ### image + image -> image
 
-> 风格迁移(image style transfer)
+> 风格迁移(Neural Style)
 
 [《Gatys L A, Ecker A S, Bethge M. A neural algorithm of artistic style[J]. arXiv preprint arXiv:1508.06576, 2015.》](https://arxiv.org/pdf/1508.06576)
+
+[《Gatys L A, Ecker A S, Bethge M. Image style transfer using convolutional neural networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 2414-2423.》](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
 
 ## 其他
 
@@ -53,3 +63,9 @@
 ### [NTIRE 2018 超分辨率 CVPR Workshop](https://zhuanlan.zhihu.com/p/39930043)
 
 ### [结合深度学习的图像修复怎么实现？](https://www.zhihu.com/question/56801298)
+
+### [图像风格迁移(Neural Style)简史](https://zhuanlan.zhihu.com/p/26746283)
+
+### [学习笔记：图像风格迁移](https://blog.csdn.net/czp_374/article/details/81185603)
+
+### [探索生成式对抗网络GAN训练的技术：自注意力和光谱标准化](https://cloud.tencent.com/developer/article/1346708)
