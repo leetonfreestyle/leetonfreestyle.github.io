@@ -107,7 +107,7 @@ SRCNN是首个使用CNN结构的端到端的超分辨率算法,令F为训练模�
 1. [谱归一化（Spectral Normalization）的理解](https://blog.csdn.net/StreamRock/article/details/83590347)
 1. [深度学习中的Lipschitz约束：泛化与生成模型](https://www.jiqizhixin.com/articles/2018-10-16-19)
 1. [令人拍案叫绝的Wasserstein GAN](https://zhuanlan.zhihu.com/p/25071913)
-1. [如此逼真的高清图像居然是端到端网络生成的？GANs 自叹不如 | ICCV 2017](https://www.leiphone.com/news/201708/Jy2RophpB7M9WIhf.html)
+1. [如此逼真的高清图像居然是端到端网络生成的？GANs 自叹不如 ICCV 2017](https://www.leiphone.com/news/201708/Jy2RophpB7M9WIhf.html)
 1. [NTIRE 2018 超分辨率 CVPR Workshop](https://zhuanlan.zhihu.com/p/39930043)
 1. [结合深度学习的图像修复怎么实现？](https://www.zhihu.com/question/56801298)
 1. [图像风格迁移(Neural Style)简史](https://zhuanlan.zhihu.com/p/26746283)
