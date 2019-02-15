@@ -82,6 +82,14 @@ WGAN使用性能优良的Wasserstein距离的近似值作为损失进行拟合�
 
 本文基于对抗生成网络和双向学习在不成对的图片上来解决上述问题。本文将双向的条件翻译模型一起进行输入组合和重构，同时保留与域无关的特征。
 
+#### 《Image Generation from Sketch Constraint Using Contextual GAN》#ECCV2018
+
+[Lu Y, Wu S, Tai Y W, et al. Image Generation from Sketch Constraint Using Contextual GAN[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 205-220.](http://openaccess.thecvf.com/content_ECCV_2018/papers/Yongyi_Lu_Image_Generation_from_ECCV_2018_paper.pdf)
+
+当给定的简笔画不太好时，网络的输出也会受到简笔画边缘的强行约束去生成符合简笔画边缘的图像，这样会使得训练很不稳定。我们的做法不同，我们把简笔画作为弱约束，也就是说输出的边缘未必非要符合输入的边缘。
+
+我们训练一个对抗网络，contextual GAN，用来学习简笔画和图像的联合分布。我们的模型有以下优点：1，图像的联合表示可以更简单有效的学习图像/简笔画的联合概率分布，这样可以避免交叉域学习中的复杂问题。2.虽然输出依赖于输入，但是输入的特征表现出更多的自由性，并不像传统GAN那样严格与输入特征对齐。3.从联合图像的观点来看，图像和简笔画没有什么不同，因此用一个相同的连结图像实现网络来做图像到简笔画的生成。
+
 > 图像属性生成(attribute based image generation)
 
 #### 《Deformable GANs for Pose-based Human Image Generation》#CVPR2018
@@ -89,6 +97,18 @@ WGAN使用性能优良的Wasserstein距离的近似值作为损失进行拟合�
 [Siarohin A, Sangineto E, Lathuilière S, et al. Deformable gans for pose-based human image generation[C]//CVPR 2018-Computer Vision and Pattern Recognition. 2018.](http://openaccess.thecvf.com/content_cvpr_2018/papers/Siarohin_Deformable_GANs_for_CVPR_2018_paper.pdf)
 
 本文主要解决在给定人体姿态下的人体图片生成问题，即使用一张原始人体图片生成一张不同姿态下这个人的人体图片。为了解决人体姿态差异造成的图像内容不匹配，作者在GAN的框架中增加了可变形的跨层连接；为了使得生成图片包含目标图片中的更多细节，使用最近邻损失代替了L1和L2损失。
+
+#### 《ELEGANT: Exchanging Latent Encodings with GAN for Transferring Multiple Face Attributes》#ECCV2018
+
+[Xiao T, Hong J, Ma J. ELEGANT: Exchanging Latent Encodings with GAN for Transferring Multiple Face Attributes[J]. arXiv preprint arXiv:1803.10562, 2018.](https://arxiv.org/pdf/1803.10562.pdf)
+
+本文关注于人脸属性迁移。这个任务主要有三个挑战，匹配效果差，不能同时迁移多个属性，低质量结果。ELEGANT这个模型接受输入两张不同的人脸图片，通过交换隐空间特征来交换对应的人脸属性，从而快速完成多属性转移的任务。使用了多尺度判别器来提升高分辨率图片质量。
+
+#### 《Generative Adversarial Network with Spatial Attention for Face Attribute Editing》#ECCV2018
+
+[Zhang G, Kan M, Shan S, et al. Generative adversarial network with spatial attention for face attribute editing[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 417-432.](http://openaccess.thecvf.com/content_ECCV_2018/papers/Gang_Zhang_Generative_Adversarial_Network_ECCV_2018_paper.pdf)
+
+本文认为早期针对人脸属性变化的方法都会不可避免地修改到无关的区域，所以提出了加入局部注意力的方式。提出的SaGAN（和SAGAN区分）模型具体为，生成器中包含一个网络来控制人脸属性修改图片，一个带局部注意力的网络来定位指定的属性，判别器就还是判断图片是否真实、人脸属性是否正确（分类器）。
 
 > 图像超分辨率(image super resolution)
 
@@ -110,6 +130,12 @@ SRCNN是首个使用CNN结构的端到端的超分辨率算法,令F为训练模�
 
 本文讨论了两项具有挑战性的任务：提高低分辨率人脸图像的质量，并准确定位这些分辨率图像上的人脸关键点。通过在超分辨率对抗生成网络中增加了一个生成人脸关键点热力图的子网络，以及在损失中增加热力图损失的方式来实现。
 
+#### 《To learn image super-resolution, use a GAN to learn how to do image degradation first》#ECCV2018
+
+[Bulat A, Yang J, Tzimiropoulos G. To learn image super-resolution, use a GAN to learn how to do image degradation first[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 185-200.](http://openaccess.thecvf.com/content_ECCV_2018/papers/Adrian_Bulat_To_learn_image_ECCV_2018_paper.pdf)
+
+早期的工作在生成低分辨率图片的时候，都是使用了简单的下采样方式，但这样产生的模型在面对现实世界中的低分辨率图片效果并不好。所以他们使用了一个额外的GAN模型来实现高分辨率到低分辨率的转换过程，而且使用的是非成对的高低分辨率图片数据进行训练，在训练低分辨率到高分辨率的GAN时候，使用的就是成对的图片数据。
+
 ### 三、image + mask -> image
 
 > 图像填补(image inpainting)
@@ -130,6 +156,14 @@ SRCNN是首个使用CNN结构的端到端的超分辨率算法,令F为训练模�
 
 我们提出了一种新的基于深度生成模型的方法，该方法不仅可以合成新颖的图像结构，还可以在网络训练期间明确利用周围的图像特征作为参考，以便做出更好的预测。该模型是一个前馈完全卷积神经网络，它可以在测试时间内在任意位置和可变尺寸下处理多个孔的图像。
 
+#### 《Image Inpainting for Irregular Holes Using Partial Convolutions》#ECCV2018
+
+[Liu G, Reda F A, Shih K J, et al. Image inpainting for irregular holes using partial convolutions[J]. arXiv preprint arXiv:1804.07723, 2018.](https://arxiv.org/pdf/1804.07723.pdf)
+
+现有的深度学习图像修复方法在损坏的图像上使用标准卷积网络，使用有效像素和空洞中的像素值作为条件信息生成填补区域的像素值，这会导致生成区域和其他区域之间的颜色差异和伪影，尽管后处理操作可以减轻这种现象，但代价高昂并且不一定有效。
+
+本文提出使用部分卷积代替标准卷积进行图像修复，部分卷积屏蔽空洞内的像素并重新归一化，使得网络仅以有效像素作为条件生成填补区域的像素值。除此以外，我们还提出一种掩码生成机制，可以自动为下一层生成掩码。
+
 #### 《EdgeConnect: Generative Image Inpainting with Adversarial Edge Learning》#最新论文
 
 [Nazeri K, Ng E, Joseph T, et al. EdgeConnect: Generative Image Inpainting with Adversarial Edge Learning[J]. arXiv preprint arXiv:1901.00212, 2019.](https://arxiv.org/pdf/1901.00212)
@@ -140,19 +174,17 @@ SRCNN是首个使用CNN结构的端到端的超分辨率算法,令F为训练模�
 
 > 风格迁移(Neural Style)
 
-#### 《A neural algorithm of artistic style》
+#### 《A neural algorithm of artistic style》#CVPR2015
 
 [Gatys L A, Ecker A S, Bethge M. A neural algorithm of artistic style[J]. arXiv preprint arXiv:1508.06576, 2015.](https://arxiv.org/pdf/1508.06576)
 
 本文利用深度学习的方法来重建纹理，解决了手动建模局部统计模型描述生成纹理的困扰。作者通过两个不同的网络分别提取纹理和不包括风格的图像内容，然后再合成目标图像。
 
-#### 《Visual attribute transfer through deep image analogy》
+#### 《Image style transfer using convolutional neural networks》#CVPR2016
 
-[Liao J, Yao Y, Yuan L, et al. Visual attribute transfer through deep image analogy[J]. arXiv preprint arXiv:1705.01088, 2017.](https://arxiv.org/pdf/1705.01088)
+[Gatys L A, Ecker A S, Bethge M. Image style transfer using convolutional neural networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 2414-2423.](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf)
 
-论文提出了一种新的两张图片直接进行视觉属性迁移的方法。该方法针对的是两张具有不同内容却有相似语义的图像，比如两张图的主体是同一种类别的物体，并利用高层抽象特征建立起了两张图的内容的语义对应关系。 
-
-这种图像视觉属性迁移方法可以在结构上基本保留两张图中内容图的内容及结构，同时融入参考图的视觉属性。和之前的算法不同的是，这种方法甚至适用于输入是真实照片，输出也希望是真实照片的任务，即可以达到像素级别的迁移。
+这篇文章介绍了用CNN网络做图像风格转换，将图像风格转换变成基于CNN网络寻找最优的content和style匹配问题。文章的一个关键点就是在一个CNN网络中将content representation和style representation很好地区分开。
 
 #### 《CartoonGAN: Generative Adversarial Networks for Photo Cartoonization》#CVPR2018
 
@@ -161,6 +193,14 @@ SRCNN是首个使用CNN结构的端到端的超分辨率算法,令F为训练模�
 在本文中，我们提出了一种解决方案，将现实世界场景的照片转换为卡通风格的图像。由于：（1）卡通风格具有高水平简化和抽象的独特特征，（2）卡通图像倾向于具有清晰的边缘，平滑的颜色阴影和相对简单的事实，因此现有的方法不能产生令人满意的卡通化结果。
 
 在本文中，我们提出了CartoonGAN，一种用于卡通风格化的生成对抗网络（GAN）框架。我们的方法采用不成对的照片和卡通图像进行训练。本文提出了两种适用于卡通化的新损失：（1）语义内容损失，以应对照片和漫画之间的实质风格差异，（2）促进清晰边缘的边缘促进对抗性损失。
+
+#### 《Neural Stereoscopic Image Style Transfer》#ECCV2018
+
+[Gong X, Huang H, Ma L, et al. Neural Stereoscopic Image Style Transfer[J]. 2018.](http://openaccess.thecvf.com/content_ECCV_2018/papers/Xinyu_Gong_Neural_Stereoscopic_Image_ECCV_2018_paper.pdf)
+
+以往的研究在单目图像和视频上取得了成功，但立体图像的风格化仍然是空缺的。与处理单目图像不同的是，风格化立体图像的两种视角要保持同步和一致，以便于给体验者提供舒适的视觉体验。
+
+本文提出一种双路网络结构，用于针对立体图像的一致化风格迁移。对于立体图像的每个视角进行处理时，使用本文提出的一种特征聚合策略，使得信息在两个通路之间有效传递。除了使用传统的感知损失控制转换图片的生成质量外，还利用一种多层视角损失来强制协同两个网络通路的学习，以生成多视角下一致的风格化立体图像。
 
 ## 参考文献
 
@@ -178,3 +218,4 @@ SRCNN是首个使用CNN结构的端到端的超分辨率算法,令F为训练模�
 1. [学习笔记：图像风格迁移](https://blog.csdn.net/czp_374/article/details/81185603)
 1. [探索生成式对抗网络GAN训练的技术：自注意力和光谱标准化](https://cloud.tencent.com/developer/article/1346708)
 2. [2018 CVPR GAN 相关论文调研 （自己分了下类，附地址哦）](https://www.smwenku.com/a/5bfb2f1ebd9eee7aec4df587/zh-cn)
+3. [ECCV 2018 GAN相关文章](https://zhuanlan.zhihu.com/p/47591947)
